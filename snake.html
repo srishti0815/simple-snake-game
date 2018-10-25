@@ -45,22 +45,12 @@ ctx,	  /* CanvasRenderingContext2d */
 keystate, /* Object, used for keyboard inputs */
 frames,   /* number, used for animation */
 score;	  /* number, keep track of the player score */
-/**
- * Grid datastructor, usefull in games where the game world is
- * confined in absolute sized chunks of data or information.
- * 
- * @type {Object}
- */
+
 grid = {
 	width: null,  /* number, the number of columns */
 	height: null, /* number, the number of rows */
 	_grid: null,  /* Array<any>, data representation */
-	/**
-	 * Initiate and fill a c x r grid with the value of d
-	 * @param  {any}    d default value to fill with
-	 * @param  {number} c number of columns
-	 * @param  {number} r number of rows
-	 */
+	
 	init: function(d, c, r) {
 		this.width = c;
 		this.height = r;
@@ -82,23 +72,12 @@ grid = {
 	set: function(val, x, y) {
 		this._grid[x][y] = val;
 	},
-	/**
-	 * Get the value of the cell at (x, y)
-	 * 
-	 * @param  {number} x the x-coordinate
-	 * @param  {number} y the y-coordinate
-	 * @return {any}   the value at the cell
-	 */
+	
 	get: function(x, y) {
 		return this._grid[x][y];
 	}
 }
-/**
- * The snake, works as a queue (FIFO, first in first out) of data
- * with all the current positions in the grid with the snake id
- * 
- * @type {Object}
- */
+
 snake = {
 	direction: null, /* number, the direction */
 	last: null,		 /* Object, pointer to the last element in
